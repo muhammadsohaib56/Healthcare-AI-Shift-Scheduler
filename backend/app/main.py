@@ -38,6 +38,7 @@ def seed_data():
                 Schedule(provider_name="Dr. Ahsan", shift_start="2025-11-14 15:00", shift_end="2025-11-14 17:00"),
                 Schedule(provider_name="Dr. Naeem", shift_start="2025-11-14 18:00", shift_end="2025-11-14 21:00"),
                 Schedule(provider_name="Dr. Bilal", shift_start="2025-11-15 09:00", shift_end="2025-11-15 17:00"),  # 10th
+                Schedule(provider_name="Dr. Omar", shift_start="2025‑11‑15 09:00", shift_end="2025‑11‑15 17:00"),
             ]
             session.add_all(sample)
             session.commit()
