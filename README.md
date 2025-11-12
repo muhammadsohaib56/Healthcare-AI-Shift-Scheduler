@@ -55,41 +55,49 @@ Built with **FastAPI (Python)**, **React (TypeScript)**, **SQLAlchemy**, and **L
 ```
 scheduling-assistant/
 │
+├── .gitignore
+├── README.md                     (Optional – add for pro look)
+│
 ├── backend/
+│   ├── .env                      (IGNORED – not in Git)
+│   ├── schedule.db               (IGNORED – not in Git)
+│   ├── requirements.txt
+│   │
 │   ├── app/
-│   │   ├── __init__.py
-│   │   ├── main.py           # FastAPI app, routes, startup
-│   │   ├── models.py         # SQLAlchemy models (Shift, Message, etc.)
-│   │   ├── schemas.py        # Pydantic schemas for validation
-│   │   ├── database.py       # DB engine setup + session management
-│   │   ├── agent.py          # AI logic (LLM, LangChain, intent detection)
-│   │   └── utils.py          # Helper functions (formatting, parsing)
+│   │   ├── __init__.py           (empty or not needed)
+│   │   ├── main.py
+│   │   ├── database.py
+│   │   └── config.py
 │   │
-│   ├── .env                  # API keys (OpenAI/Ollama), DB config
-│   └── requirements.txt      # Python dependencies (FastAPI, SQLAlchemy, etc.)
+│   └── healthcare_assistant/
+│       ├── __init__.py           (empty or not needed)
+│       ├── router.py
+│       ├── service.py
+│       ├── repository.py
+│       ├── models.py             (SQLAlchemy + Pydantic Schema)
+│       ├── agent.py
+│       └── prompts.py
 │
-├── frontend/
-│   ├── public/
-│   │   └── index.html        # Main HTML entry file
-│   │
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── ChatBox.jsx          # User input + chat area
-│   │   │   ├── MessageBubble.jsx    # Individual message bubble (user/AI)
-│   │   │   └── ScheduleTable.jsx    # Weekly schedule table display
-│   │   │
-│   │   ├── api.js            # Axios instance for backend API calls
-│   │   ├── App.jsx           # Main UI combining chat + schedule
-│   │   ├── index.css         # Tailwind or custom global styles
-│   │   └── index.js          # Entry point rendering App.jsx
-│   │
-│   ├── .env                  # Frontend environment variables (e.g. API URL)
-│   ├── package.json          # React dependencies
-│   ├── package-lock.json     # Locked dependency versions
-│   ├── postcss.config.js     # Tailwind/PostCSS configuration
-│   └── tailwind.config.js    # Tailwind custom setup
-│
-├── README.md                 # Documentation for project setup + usage
+└── frontend/
+    ├── .env                      (IGNORED – not in Git)
+    ├── package.json
+    ├── package-lock.json
+    ├── postcss.config.js
+    ├── tailwind.config.js
+    │
+    ├── public/
+    │   └── index.html
+    │
+    └── src/
+        ├── index.js
+        ├── index.css
+        ├── api.js
+        ├── App.jsx
+        │
+        └── components/
+            ├── ChatBox.jsx       (unused – kept for reference)
+            ├── MessageBubble.jsx (unused – kept for reference)
+            └── ScheduleTable.jsx (UPDATED: scroll after 6 rows)
 ```
 
 ---
